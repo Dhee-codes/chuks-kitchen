@@ -1,26 +1,69 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-island: var(--font-island-moments); 
+  --font-pop: var(--font-poppins);
+  --font-int: var(--font-inter);
+  --font-jo: var(--font-jost);
+
+  --color-primary: #FF7A18;
+  --color-primary-light: #FFB066;
+  --color-primary-lighter: #FFE1C4;
+  --color-primary-dark: #C95400;
+
+  --color-rose-accent: #FF4F9A;
+  --color-rose-light: #FF9AC7;
+  --color-rose-lighter: #FFE1EE;
+  --color-rose-dark: #B0005A;
+
+  --color-blue-accent: #1E88E5;
+  --color-blue-light: #64B5F6;
+  --color-blue-lighter: #E3F2FD;
+  --color-blue-dark: #0DA7A1;
+
+  --color-surface: #FFFFFF;
+  --color-page: #F3F4F6;
+
+  --color-text-primary: #1F2937;
+  --color-text-secondary: #4B5563;
+  --color-text-muted: #9CA3AF;
+
+  --color-footer: #62412E;
+  --color-back-to-top: #0081FE;
+
+  --text-sz-150: clamp(3.75rem, calc(2.14rem + 8vw), 9.375rem);
+  --text-sz-120: 16vw;
+  --text-sz-64: clamp(2.375rem, calc(1.9rem + 2.3vw), 4rem);
+  --text-sz-60: clamp(2.25rem, calc(1.82rem + 2.14vw), 3.75rem);
+  --text-sz-55: clamp(2.0625rem, calc(1.67rem + 1.96vw), 3.4375rem);
+  --text-sz-48: clamp(1.875rem, calc(1.55rem + 1.6vw), 3rem);
+  --text-sz-40: clamp(1.75rem, calc(1.53rem + 1vw), 2.5rem);
+  --text-sz-36: clamp(1.625rem, calc(1.44rem + 0.89vw), 2.25rem);
+  --text-sz-32: clamp(1.5rem, calc(1.357rem + 0.71vw), 2rem);
+  --text-sz-30: clamp(1.25rem, calc(1.071rem + 0.893vw), 1.875rem);
+  --text-sz-28: clamp(1.25rem, calc(1.107rem + 0.71vw), 1.75rem);
+  --text-sz-24: clamp(1.125rem, calc(1.01rem + 0.535vw), 1.5rem);
+  --text-sz-20: clamp(1rem, calc(0.93rem + 0.357vw), 1.25rem);
+  --text-sz-18: clamp(0.875rem, calc(0.8rem + 0.357vw), 1.125rem);
+  --text-sz-16: clamp(0.75rem, calc(0.678rem + 0.357vw), 1rem);
+  --text-sz-14: clamp(0.625rem, calc(0.553rem + 0.357vw), 0.875rem);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.dark {
+  --color-page: #1F2937;
+  --color-text-primary: #FFE1C4;
+}
+
+@utility footer-text {
+  @apply text-sz-24 text-surface/90 leading-9 font-jo;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-int), system-ui, sans-serif;
+    background: var(--color-page);
+    color: var(--color-text-primary);
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
