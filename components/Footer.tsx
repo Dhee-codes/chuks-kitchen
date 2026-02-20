@@ -31,7 +31,7 @@ const scrollToTop = () => {
 
 export const Footer = () => {
   return (
-    <footer className="text-[12px] leading-7 font-pop text-surface/60 bg-footer px-4 sm:px-10 md:px-14 lg:px-27.5 py-12 md:py-14 lg:py-17.25">
+    <footer className="text-[12px] leading-7 font-poppins text-secondary-foreground bg-secondary px-4 sm:px-10 md:px-14 lg:px-27.5 py-12 md:py-14 lg:py-17.25">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-17 lg:gap-25.25 mb-1">
         <section>
           <Image
@@ -77,7 +77,10 @@ export const Footer = () => {
       </div>
       <div className="flex justify-between items-end">
         <p>&copy; 2020 Lift Media. All rights reserved.</p>
-        <button onClick={scrollToTop} className="w-13 aspect-square bg-back-to-top rounded-full flex justify-center items-center">
+        <button
+          onClick={scrollToTop}
+          className="w-13 aspect-square bg-[#0081FE] rounded-full flex justify-center items-center"
+        >
           <Image
             src="/footer/back-to-top-arrow.svg"
             alt="Back to top arrow"
