@@ -7,7 +7,7 @@ export interface Navlink {
 export const navlinks: Navlink[] = [
     {
         label: "Home",
-        href: "/",
+        href: "/home",
         isInHeader: true,
     },
     {

@@ -19,8 +19,25 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { usePathname } from "next/navigation";
+
+const LoginBtn = ({ className }: { className?: string }) => {
+  return (
+    <Button
+      className={cn(
+        "hidden md:flex bg-primary hover:bg-accent rounded-lg px-14.5 py-5 ",
+        className,
+      )}
+      asChild
+    >
+      <Link href="/sign-in">Login</Link>
+    </Button>
+  );
+}
 
 export const Navbar = () => {
+  const pathname = usePathname();
+
   return (
     <header className="sticky top-0 z-50 w-full bg-card backdrop-blur-md text-foreground font-inter">
       <div className="px-4.75 md:px-12 py-2 md:py-4.5 flex items-center justify-between md:gap-11.25">
@@ -31,32 +48,37 @@ export const Navbar = () => {
             <NavigationMenuList>
               {navlinks
                 .filter((link) => link.isInHeader)
-                .map((link) => (
-                  <NavigationMenuItem className="flex-1" key={link.href}>
-                    <NavigationMenuLink
-                      asChild
-                      className={cn(
-                        navigationMenuTriggerStyle(),
-                        "text-sz-16 leading-6",
-                      )}
-                    >
-                      <Link href={link.href}>{link.label}</Link>
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                ))}
+                .map((link) => {
+                  const isCurrent = pathname === link.href;
+
+                  return (
+                    <NavigationMenuItem className="flex-1" key={link.href}>
+                      <NavigationMenuLink
+                        asChild
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        <Link
+                          href={link.href}
+                          aria-current={isCurrent ? "page" : undefined}
+                        >
+                          {link.label}
+                        </Link>
+                      </NavigationMenuLink>
+                    </NavigationMenuItem>
+                  );
+                })}
             </NavigationMenuList>
           </NavigationMenu>
         </nav>
 
         <div className="flex items-center gap-4">
-          <Button className="hidden sm:flex font-semibold bg-primary hover:bg-accent rounded-lg px-14.5 py-3.75">
-            Login
-          </Button>
+          <LoginBtn />
 
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="custom" className="md:hidden">
+              <Button size="custom" className="md:hidden bg-card border-none">
                 <Menu />
+                <span className="sr-only">Open Menu</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="px-15 py-menu-y">
@@ -74,9 +96,7 @@ export const Navbar = () => {
                     </Link>
                   ))}
               </nav>
-              <Button className="flex font-semibold bg-primary hover:bg-accent rounded-lg py-3.75 mt-15">
-                Login
-              </Button>
+              <LoginBtn className="flex mt-15" />
             </SheetContent>
           </Sheet>
         </div>

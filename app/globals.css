@@ -32,20 +32,18 @@
   --text-sz-55: clamp(2.0625rem, calc(1.67rem + 1.96vw), 3.4375rem);
   --text-sz-40: clamp(1.75rem, calc(1.53rem + 1vw), 2.5rem);
   --text-sz-36: clamp(1.625rem, calc(1.44rem + 0.89vw), 2.25rem);
-  --text-sz-32: clamp(1.5rem, calc(1.357rem + 0.71vw), 2rem);
   --text-sz-30: clamp(1.25rem, calc(1.071rem + 0.893vw), 1.875rem);
   --text-sz-28: clamp(1.25rem, calc(1.107rem + 0.71vw), 1.75rem);
   --text-sz-24: clamp(1.125rem, calc(1.01rem + 0.535vw), 1.5rem);
   --text-sz-20: clamp(1rem, calc(0.93rem + 0.357vw), 1.25rem);
   --text-sz-18: clamp(0.875rem, calc(0.8rem + 0.357vw), 1.125rem);
-  --text-sz-16: clamp(0.75rem, calc(0.678rem + 0.357vw), 1rem);
   --text-sz-14: clamp(0.625rem, calc(0.553rem + 0.357vw), 0.875rem);
 }
 */
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(100% 0.00011 271.152);
+  --background: oklch(96.696% 0.00298 264.792);
   --foreground: oklch(27.808% 0.02963 256.871);
   --card: oklch(100% 0.00011 271.152);
   --card-foreground: oklch(44.611% 0.02636 256.837);
@@ -128,6 +126,7 @@
   --radius-4xl: calc(var(--radius) + 16px);
 
   --text-sz-48: clamp(1.875rem, calc(1.55rem + 1.6vw), 3rem);
+  --text-sz-32: clamp(1.5rem, calc(1.357rem + 0.71vw), 2rem);
   --text-sz-24: clamp(1.125rem, calc(1.01rem + 0.535vw), 1.5rem);
   --text-sz-16: clamp(0.75rem, calc(0.678rem + 0.357vw), 1rem);
 
@@ -168,18 +167,46 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-@utility footer-text {
-  @apply text-sz-24 text-secondary-foreground leading-9 font-jost;
-}
-
 @layer base {
   body {
     font-family: var(--font-inter), system-ui, sans-serif;
     background: var(--color-background);
     color: var(--color-foreground);
-    @apply bg-background text-foreground;
   }
   * {
     @apply border-border outline-ring/50;
+  }
+}
+
+
+@utility footer-text {
+  color: var(--color-secondary-foreground);
+  font-family: var(--font-jost);
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+}
+
+@utility title-md {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+}
+
+@utility sect-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2.125rem;
+}
+
+@utility regular {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+
+  @variant md {
+    font-weight: 500;
+    line-height: 1.5rem;
+    letter-spacing: 0em;
   }
 }
