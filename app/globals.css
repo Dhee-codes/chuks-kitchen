@@ -124,12 +124,7 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
-
-  --text-sz-48: clamp(1.875rem, calc(1.55rem + 1.6vw), 3rem);
-  --text-sz-32: clamp(1.5rem, calc(1.357rem + 0.71vw), 2rem);
-  --text-sz-24: clamp(1.125rem, calc(1.01rem + 0.535vw), 1.5rem);
-  --text-sz-16: clamp(0.75rem, calc(0.678rem + 0.357vw), 1rem);
-
+  
   --spacing-menu-y: clamp(4rem, 8.8vw, 8rem);
 }
 
@@ -196,6 +191,12 @@
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 2.125rem;
+}
+
+@utility small {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
 }
 
 @utility regular {
