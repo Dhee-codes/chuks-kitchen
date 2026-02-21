@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import { Logo } from "./Logo";
 import { navlinks } from "@/lib/navigation";
 import { Button } from "@/components/ui/button";
 import { Menu } from "@/components/ui/Menu";
@@ -24,18 +24,9 @@ export const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 w-full bg-card backdrop-blur-md text-foreground font-inter">
       <div className="px-4.75 md:px-12 py-2 md:py-4.5 flex items-center justify-between md:gap-11.25">
-        <Link href="/">
-          <Image
-            src="/logo.svg"
-            alt="Logo"
-            width={183}
-            height={41}
-            className="w-27 md:w-45.75"
-            priority
-          />
-        </Link>
+        <Logo link={true} className="w-27 sm:w-34" />
 
-        <nav className="hidden md:block flex-1">
+        <nav aria-label="Primary navigation" className="hidden md:block flex-1">
           <NavigationMenu>
             <NavigationMenuList>
               {navlinks
