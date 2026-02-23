@@ -12,18 +12,20 @@ export default function SignIn() {
           <h1 className="sect-title">Login your Account</h1>
         </div>
 
-        <form>
-          <div>
-            <div>
+        <form className="w-full grid">
+          <div className="flex flex-col small">
+            <div className="mb-5">
               <label htmlFor="user-id">Email or phone number</label>
-              <div>
-                <span aria-hidden="true">
+              <div className="relative mt-1.5">
+                <span
+                  aria-hidden="true"
+                  className="absolute left-3 top-1/2 -translate-y-1/2"
+                >
                   <Image
                     src="/icons/mail.svg"
                     alt="Mail icon"
                     width={20}
                     height={20}
-                    aria-hidden="true"
                   />
                 </span>
                 <input
@@ -31,20 +33,23 @@ export default function SignIn() {
                   type="text"
                   placeholder="name@gmail.com"
                   required
+                  className="w-full border border-border rounded-md pl-12 pr-4 py-4"
                 />
               </div>
             </div>
 
             <div>
               <label htmlFor="user-pass">Password</label>
-              <div>
-                <span aria-hidden="true">
+              <div className="relative mt-1.5">
+                <span
+                  aria-hidden="true"
+                  className="absolute left-3 top-1/2 -translate-y-1/2"
+                >
                   <Image
                     src="/icons/lock.svg"
                     alt="Mail icon"
                     width={20}
                     height={20}
-                    aria-hidden="true"
                   />
                 </span>
                 <input
@@ -52,11 +57,16 @@ export default function SignIn() {
                   type="password"
                   placeholder="******"
                   required
+                  className="w-full border border-border rounded-md px-12 py-4"
                 />
-                <button type="button" aria-label="Show password">
+                <button
+                  type="button"
+                  aria-label="Show password"
+                  className="absolute right-3 top-1/2 -translate-y-1/2"
+                >
                   <Image
-                    src="/icons/eye.svg"
-                    alt="Mail icon"
+                    src="/icons/hide.svg"
+                    alt="Eye icon"
                     width={20}
                     height={20}
                     aria-hidden="true"
@@ -65,45 +75,55 @@ export default function SignIn() {
               </div>
             </div>
 
-            <Link href="/">Forgot Password?</Link>
+            <Link href="/" className="text-right caption my-4">
+              Forgot Password?
+            </Link>
           </div>
 
-          <Button type="submit">Continue</Button>
+          <Button type="submit" className="py-6">
+            Continue
+          </Button>
         </form>
 
-        {/* Divider */}
-        <div role="separator">Or continue with</div>
+        <div role="separator" className="caption text-center my-3">
+          Or continue with
+        </div>
 
-        {/* Social Logins */}
-        <div>
-          <Button aria-label="Continue with Google">
-            <span aria-hidden="true">
+        <div className="w-full flex flex-col gap-6 mb-4">
+          <button
+            className="flex gap-3 bg-card justify-center items-center border border-border text-foreground py-4 regular-roboto"
+            aria-label="Continue with Google"
+          >
+            <span aria-hidden="true" className="w-5 aspect-square">
               <Image
                 src="/icons/google.svg"
                 alt="Mail icon"
                 width={20}
                 height={20}
-                aria-hidden="true"
               />
             </span>
             Continue with Google
-          </Button>
-          <Button aria-label="Continue with Apple">
-            <span aria-hidden="true">
+          </button>
+          <button
+            className="flex gap-3 bg-card justify-center items-center border border-border text-foreground py-4 regular-roboto"
+            aria-label="Continue with Facebook"
+          >
+            <span aria-hidden="true" className="w-3 aspect-square">
               <Image
                 src="/icons/facebook.svg"
                 alt="Mail icon"
                 width={20}
                 height={20}
-                aria-hidden="true"
               />
             </span>
             Continue with Facebook
-          </Button>
+          </button>
         </div>
-        <p>
-          Don&apos;t have an account?
-          <Link href="/register">Create an account</Link>
+        <p className="caption">
+          Don&apos;t have an account?{" "}
+          <Link href="/register" className="text-[#64B5F6] hover:underline">
+            Create an account
+          </Link>
         </p>
       </section>
     </div>

@@ -84,6 +84,7 @@
   --font-poppins: var(--font-poppins);
   --font-inter: var(--font-inter);
   --font-jost: var(--font-jost);
+  --font-roboto: var(--font-roboto);
 
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -191,6 +192,18 @@
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 2.125rem;
+}
+
+@utility caption {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1rem;
+}
+
+@utility regular-roboto {
+  font-family: var(--font-roboto);
+  font-size: 0.75rem;
+  font-weight: 400;
 }
 
 @utility small {

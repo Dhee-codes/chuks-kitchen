@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Logo } from "./Logo";
-import { navlinks } from "@/lib/navigation";
+import { navlinks, type Navlink } from "@/lib/navigation";
 import { Button } from "@/components/ui/button";
 import { Menu } from "@/components/ui/Menu";
 import { cn } from "@/lib/utils";
@@ -47,7 +47,7 @@ export const Navbar = () => {
           <NavigationMenu>
             <NavigationMenuList>
               {navlinks
-                .filter((link) => link.isInHeader)
+                .filter((link: Navlink) => link.isInHeader)
                 .map((link) => {
                   const isCurrent = pathname === link.href;
 
