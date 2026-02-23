@@ -77,27 +77,3 @@ export default function Welcome() {
     </div>
   );
 }
-
-/*
-<section className="flex flex-col items-start px-6 py-12 md:py-24 max-w-7xl mx-auto">
-  
-
-  <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
-    <div className="flex items-center gap-4">
-      <div className="size-12 rounded-lg bg-orange-100 flex items-center justify-center">
-        <Utensils className="text-orange-600 size-6" />
-      </div>
-      <span className="font-medium text-slate-800">Freshly Prepared</span>
-    </div>
-  </div>
-
-  <div className="mt-10 flex flex-col w-full gap-4 sm:flex-row sm:w-auto">
-    <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 h-14 rounded-xl">
-      Start Your Order
-    </Button>
-    <Button variant="outline" size="lg" className="border-sky-500 text-sky-600 h-14 rounded-xl">
-      Learn More About Us
-    </Button>
-  </div>
-</section>
-*/
