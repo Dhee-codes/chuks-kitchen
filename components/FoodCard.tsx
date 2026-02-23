@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { type FoodData } from "@/lib/foodData";
+import type { FoodData } from "@/lib/foodData";
 
 export function FoodCard({ title, description, price, imageUrl }: FoodData ) {
   return (
