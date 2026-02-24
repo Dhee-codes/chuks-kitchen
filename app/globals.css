@@ -224,3 +224,39 @@
     letter-spacing: 0em;
   }
 }
+
+@utility semi-bold {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.75rem;
+
+  @variant md {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2.125rem;
+  }
+}
+
+@utility extra-bold {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+
+  @variant md {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.4;
+  }
+}
+
+@utility page-heading {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+
+  @variant md {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2.625rem;
+  }
+}

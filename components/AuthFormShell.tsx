@@ -1,9 +1,16 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import { Logo } from "./Logo"
 import { Button } from "./ui/button";
 import Link from "next/link";
 import Image from "next/image"
 
 export const AuthFormShell = ({ title, children }: { title: string, children: React.ReactNode }) => {
+  const pathname = usePathname();
+  const isSignIn = pathname === "/sign-in";
+  const isSignUp = pathname === "/sign-up";
+
   return (
     <div className="grid min-h-screen place-items-center">
       <section className="w-full md:w-470/730 max-w-117.5 md:min-w-95 px-5 py-8 md:py-16 lg:py-24">
@@ -14,7 +21,7 @@ export const AuthFormShell = ({ title, children }: { title: string, children: Re
         <form className="w-full grid">
           {children}
           <Button type="submit" className="py-6 mt-5">
-            Continue
+            <Link href={isSignIn ? "/home" : isSignUp ? "/sign-in" : "/"}>Continue</Link>
           </Button>
         </form>
 

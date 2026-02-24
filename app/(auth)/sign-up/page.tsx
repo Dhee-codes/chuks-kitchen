@@ -45,6 +45,13 @@ export default function SignUp() {
         onChange={(e) => setConfirmPassword(e.target.value)}
         required
       />
+
+      {!isMatch && (
+        <p className="text-xs text-red-500 font-medium animate-in fade-in">
+          Passwords do not match
+        </p>
+      )}
+      
       <AgreementInput />
     </AuthFormShell>
   );
