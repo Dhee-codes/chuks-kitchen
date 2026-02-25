@@ -32,9 +32,9 @@ export default function Menu() {
         setActiveCategory={setActiveCategory}
       />
 
-      <section className="flex-1 px-4.5 md:px-12 pt-22 pb-24">
-        <h1 className="text-2xl font-bold mb-6">{activeCategory}</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-17.5 justify-items-center">
+      <section className="flex-1 px-5 md:px-12 py-6 md:pt-12.5 md:pb-20.5">
+        <h1 className="title-md md:page-subhead mb-1 md:mb-5">{activeCategory}</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-17.5 justify-items-center">
           {filteredFood.map((food) => (
             <FoodItemCard food={food} variant="menu" key={food.id} />
           ))}
