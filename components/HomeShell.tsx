@@ -14,10 +14,10 @@ export const HomeShell = ({ children }: { children: React.ReactNode }) => {
     <section>
       <div className="relative w-full aspect-390/765 md:aspect-1440/1024 bg-[url(/home/hero-bg.png)] bg-cover bg-center">
         <div className="absolute inset-0 bg-black/45 flex flex-col justify-center gap-5 text-primary-foreground px-2 md:px-12">
-          <h1 className="text-[2rem] md:text-[3rem] leading-10 md:leading-15.25 font-bold">
+          <h1 className="page-head">
             The Heart of Nigerian Home Cooking
           </h1>
-          <h2 className="page-heading">
+          <h2 className="page-subhead">
             Handcrafted with passion, delivered with care.
           </h2>
           <div>

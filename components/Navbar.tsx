@@ -55,7 +55,10 @@ export const Navbar = () => {
                     <NavigationMenuItem className="flex-1" key={link.href}>
                       <NavigationMenuLink
                         asChild
-                        className={navigationMenuTriggerStyle()}
+                        className={cn(
+                          navigationMenuTriggerStyle(),
+                          isCurrent && "text-primary",
+                        )}
                       >
                         <Link
                           href={link.href}
@@ -86,15 +89,19 @@ export const Navbar = () => {
               <nav className="flex flex-col gap-8">
                 {navlinks
                   .filter((link) => link.isInHeader)
-                  .map((link) => (
-                    <Link
-                      key={link.label}
-                      href={link.href}
-                      className="text-lg font-medium"
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
+                  .map((link) => {
+                    const isCurrent = pathname === link.href;
+
+                    return (
+                      <Link
+                        key={link.label}
+                        href={link.href}
+                        aria-current={isCurrent ? "page" : undefined}
+                        className={`${isCurrent && "text-primary"} text-lg font-medium`}
+                      >
+                        {link.label}
+                      </Link>
+                    );})}
               </nav>
               <LoginBtn className="flex mt-15" />
             </SheetContent>
