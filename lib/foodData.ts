@@ -63,16 +63,6 @@ export const categories: Category[] = [
 export const foodData: FoodItem[] = [
   {
     id: "spec-001",
-    title: "Spicy Tilapia Pepper Soup",
-    price: "₦3,500",
-    description:
-      "A comforting and spicy soup with tender tilapia fish, a true Nigerian delicacy.",
-    imageUrl: "/food/food-items/tilapia-pepper-soup.jpg",
-    category: "Peppered",
-    isChefSpecial: true,
-  },
-  {
-    id: "spec-002",
     title: "Jollof Rice & Fried Chicken",
     price: "₦3,500",
     description:
@@ -83,12 +73,60 @@ export const foodData: FoodItem[] = [
     isChefSpecial: true,
   },
   {
-    id: "spec-003",
+    id: "food-001",
+    title: "Eba & Egusi Soup (Goat Meat)",
+    price: "₦3,500",
+    description:
+      "Hearty Egusi soup with tender goat meat, served with soft Eba.",
+    imageUrl: "/food/food-items/eba-egusi-ewu.jpg",
+    category: "Swallows & Soups",
+    isPopular: true,
+  },
+  {
+    id: "food-002",
+    title: "Pounded Yam & Edikaikong",
+    price: "₦3,800",
+    description: "Traditional pounded yam with rich, leafy Edikaikong soup.",
+    imageUrl: "/food/food-items/pounded-yam-edi.jpg",
+    category: "Swallows & Soups",
+    isPopular: true,
+  },
+  {
+    id: "food-003",
+    title: "Peppered Snail",
+    price: "₦2,500",
+    description: "Spicy and savory peppered snail, perfect as a starter.",
+    imageUrl: "/food/food-items/peppered-snail.jpg",
+    category: "Peppered",
+    isPopular: true,
+  },
+  {
+    id: "food-004",
+    title: "Grilled Tilapia Fish",
+    price: "₦4,500",
+    description: "Whole grilled tilapia seasoned with our special spices.",
+    imageUrl: "/food/food-items/grilled-tilapia.jpg",
+    category: "Grills & Sides",
+    isPopular: true,
+  },
+  {
+    id: "spec-002",
     title: "Jollof Rice & Smoked Fish",
     price: "₦3,500",
     description: "Flavorful jollof rice served with perfectly smoked fish.",
     imageUrl: "/food/food-items/jollof-smoked-fish.jpg",
     category: "Jollof Rice & Entrees",
+    isPopular: true,
+    isChefSpecial: true,
+  },
+  {
+    id: "spec-003",
+    title: "Spicy Tilapia Pepper Soup",
+    price: "₦3,500",
+    description:
+      "A comforting and spicy soup with tender tilapia fish, a true Nigerian delicacy.",
+    imageUrl: "/food/food-items/tilapia-pepper-soup.jpg",
+    category: "Peppered",
     isChefSpecial: true,
   },
   {
@@ -100,6 +138,14 @@ export const foodData: FoodItem[] = [
     imageUrl: "/food/food-items/jollof-chicken.jpg",
     category: "Jollof Rice & Entrees",
     isChefSpecial: true,
+  },
+  {
+    id: "food-005",
+    title: "Party Jollof Rice (Veg)",
+    price: "₦2,800",
+    description: "Vegetarian party jollof, full of rich flavors.",
+    imageUrl: "/food/food-items/party-jollof-veg.jpg",
+    category: "Jollof Rice & Entrees",
   },
   {
     id: "spec-005",
@@ -119,62 +165,50 @@ export const foodData: FoodItem[] = [
       "Rich and savory Egusi soup with assorted meats, paired with freshly pounded yam.",
     imageUrl: "/food/food-items/egusi-pounded-yam.jpg",
     category: "Swallows & Soups",
-    isPopular: true,
-    isChefSpecial: true,
-  },
-  {
-    id: "food-00",
-    title: "Eba & Egusi Soup (Goat Meat)",
-    price: "₦8,200",
-    description:
-      "Smooth yellow garri served with rich, nutty melon seed soup containing chunks of tender goat meat.",
-    imageUrl: "/food/eba-egusi.jpg",
-    category: "Popular",
-  },
-  {
-    id: "food-004",
-    title: "Pounded Yam & Efo-Riro",
-    price: "₦9,000",
-    description:
-      "Authentic stretchy pounded yam paired with a vibrant rich spinach stew loaded with assorted meats.",
-    imageUrl: "/food/pounded-yam-efo.jpg",
-    category: "Popular",
-  },
-  {
-    id: "food-005",
-    title: "Native Rice & Smoked Fish",
-    price: "₦7,000",
-    description:
-      "Traditional palm oil rice cooked with locust beans (iru), crayfish, and flakes of smoked mudfish.",
-    imageUrl: "/food/native-rice.jpg",
-    category: "Chef's Specials",
     isChefSpecial: true,
   },
   {
     id: "food-006",
-    title: "Banku with Okro Soup & Crab",
-    price: "₦10,500",
+    title: "Amala with Gbegiri & Ewedu",
+    price: "₦3,100",
     description:
-      "Fermented corn and cassava dough served with a deluxe seafood okra soup featuring fresh crab and shrimp.",
-    imageUrl: "/food/banku-okro.jpg",
+      "Classic Amala served with Gbegiri (beans) and Ewedu (jute lesf) soup.",
+    imageUrl: "/food/food-items/amala-ewedu.jpg",
     category: "Swallow & Soups",
   },
   {
     id: "food-007",
-    title: "Pounded Yam & Okro Soup",
-    price: "₦8,500",
-    description:
-      "Soft, smooth pounded yam served with a thick, traditional okra soup and assorted beef.",
-    imageUrl: "/food/pounded-yam-okro.jpg",
+    title: "Fufu & Okra Soup (Fish)",
+    price: "₦3,700",
+    description: "Light Fufu served with fresh okra soup and tilapia fish.",
+    imageUrl: "/food/food-items/fufu-okra.jpg",
     category: "Swallow & Soups",
   },
   {
     id: "food-008",
-    title: "Amala & Abula",
-    price: "₦7,500",
+    title: "Suya Spiced Grilled Fish",
+    price: "₦12,500",
     description:
-      "Lafun (yam flour) served with a traditional mix of Gbegiri (bean soup) and Ewedu (jute leaves).",
-    imageUrl: "/food/amala-abula.jpg",
-    category: "Swallow & Soups",
+      "Whole croaker fish marinated in authentic Yaji spice, grilled over open flames for a smoky finish.",
+    imageUrl: "/food/food-items/grilled-suya-fish.jpg",
+    category: "Grills & Sides",
+  },
+  {
+    id: "food-009",
+    title: "Signature Zobo Infusion",
+    price: "₦1,500",
+    description:
+      "Chilled hibiscus flower extract infused with ginger, cloves, and a hint of pineapple sweetness.",
+    imageUrl: "/food/food-items/zobo.jpg",
+    category: "Beverages",
+  },
+  {
+    id: "food-010",
+    title: "Puff Puff with Chin Chin",
+    price: "₦3,000",
+    description:
+      "Traditional deep-fried dough balls and chin chin.",
+    imageUrl: "/food/food-items/puff-puff.jpg",
+    category: "Desserts",
   },
 ];
