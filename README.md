@@ -132,7 +132,7 @@ Matching 5 pages across both Mobile and Desktop required deep use of Tailwind’
 
 1. Clone the repository:
 ```bash
-git clone [your-link]
+git clone git@github.com:Dhee-codes/chuks-kitchen.git
 ```
 
 2. Install dependencies:
