@@ -7,6 +7,34 @@ import { foodData, categories, type FoodItem, type Category } from "@/lib/foodDa
 import { CategoryCard, FoodItemCard } from "@/components/FoodCard";
 import Link from "next/link";
 
+const CategorySection = ({
+  title,
+  link,
+  cat,
+}: {
+  title: string;
+  link: string;
+  cat: Category[];
+}) => {
+  return (
+    <section className="space-y-8.25 md:space-y-12.5">
+      <h2 className="text-center sect-title md:page-subhead">{title}</h2>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 justify-items-center">
+        {cat.slice(0, 6).map((category) => (
+          <Link key={category.id} href={`/menu?category=${encodeURIComponent(category.title)}`} className="contents">
+            <CategoryCard category={category} />
+          </Link>
+        ))}
+      </div>
+
+      <p className="text-center regular text-[#1E88E5] hover:underline">
+        <Link href="/menu">View All {link}</Link>
+      </p>
+    </section>
+  );
+};
+
 const ChefSpecialsSection = ({
   title,
   link,
@@ -23,32 +51,6 @@ const ChefSpecialsSection = ({
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 justify-items-center">
         {items.slice(0, 6).map((food) => (
           <FoodItemCard food={food} variant="chefSpecial" key={food.id} />
-        ))}
-      </div>
-
-      <p className="text-center regular text-[#1E88E5] hover:underline">
-        <Link href="/menu">View All {link}</Link>
-      </p>
-    </section>
-  );
-};
-
-const CategorySection = ({
-  title,
-  link,
-  cat,
-}: {
-  title: string;
-  link: string;
-  cat: Category[];
-}) => {
-  return (
-    <section className="space-y-8.25 md:space-y-12.5">
-      <h2 className="text-center sect-title md:page-subhead">{title}</h2>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 justify-items-center">
-        {cat.slice(0, 6).map((cat) => (
-          <CategoryCard category={cat} key={cat.id} />
         ))}
       </div>
 

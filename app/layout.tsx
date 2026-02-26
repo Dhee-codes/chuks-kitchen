@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Island_Moments, Poppins, Inter, Jost, Roboto } from "next/font/google";
 import { Footer } from "@/components/Footer";
+import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
 const islandMoments = Island_Moments({
@@ -45,7 +46,10 @@ export default function RootLayout({
       <body
         className={`${islandMoments.variable} ${poppins.variable} ${inter.variable} ${jost.variable} ${roboto.variable} antialiased flex flex-col min-h-screen`}
       >
-        <main className="flex-1">{children}</main>
+        <main className="flex-1">
+          {children}
+          <Toaster position="bottom-right" richColors closeButton />
+        </main>
         <Footer />
       </body>
     </html>

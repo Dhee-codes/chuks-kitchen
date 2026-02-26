@@ -1,21 +1,22 @@
 "use client";
 
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { CategoryFilter } from "@/components/CategoryFilter";
 import { categories, foodData } from "@/lib/foodData";
 import { FoodItemCard } from "@/components/FoodCard";
 
 export default function Menu() {
-  const [activeCategory, setActiveCategory] = useState("Popular");
+  const searchParams = useSearchParams();
+  const categoryFromUrl = searchParams.get("category");
 
-  // 1. Get the flat list (what you already have)
+  const [activeCategory, setActiveCategory] = useState(categoryFromUrl || "Popular");
+
   const filteredFood = foodData.filter((item) => {
     if (activeCategory === "Popular") return item.isPopular;
     return item.category === activeCategory;
   });
 
-  // 2. NEW: If it's "Popular", group those items by their real category
-  // This creates an object like { "Jollof": [item1, item2], "Drinks": [item3] }
   const groupedItems = filteredFood.reduce(
     (acc, item) => {
       const cat = item.category;

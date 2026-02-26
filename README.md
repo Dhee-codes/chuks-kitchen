@@ -99,32 +99,29 @@ chuks-kitchen/
 
 ## 🚀 Key Features & Logic
 
-Advanced Category Filtering
-The menu features a specialized filtering system. While the data is hard-coded, the logic is built to handle complex relationships:
+### URL-Driven State Management
+Implemented a seamless navigation flow where Category Cards on the Home page link directly to filtered results on the Menu page. 
+- **Logic**: Utilized Next.js `useSearchParams` to synchronize the UI state with URL query parameters (`?category=...`), allowing for bookmarkable filtered views and cross-page communication without a global state manager.
 
-Virtual Categories: Implemented "Popular" as a functional filter. Even though "Popular" isn't a food group, the system identifies items with the isPopular flag.
+### Advanced Category Filtering
+- **Virtual Categories**: Implemented "Popular" as a functional filter using an `isPopular` flag.
+- **Grouped Rendering**: When "Popular" is active, the UI dynamically groups items by their category using `.reduce()` and `Object.entries()`.
 
-Grouped Rendering: When the "Popular" filter is active, the UI dynamically groups items by their actual category (e.g., "Popular in Jollof Rice") using .reduce() and Object.entries().
-
-Reusable Component Architecture
-Custom Auth Inputs: Developed a single AuthInput component that handles password toggles, dynamic icons, and validation states without code duplication.
-
-Responsive Navbar: A hybrid navigation system that uses a desktop NavigationMenu and a mobile Sheet (Drawer) for optimal UX.
+### Interactive User Feedback
+Used **Sonner** to implement toast notifications for "Add to Cart" actions. This provides immediate visual confirmation and handles non-implemented routes gracefully, ensuring the application feels "alive" and responsive.
 
 ---
 
 ## 🧠 Challenges Overcome
 
-🧩 Interpreting Design Ambiguity
-The Figma design presented "Popular" as a sibling to food categories like "Swallows." I identified that this would lead to a poor user experience if rendered as a flat list. I improvised a Grouped View logic that maintains the menu's structure while highlighting top-rated items, turning a design ambiguity into a functional feature.
+🧩 **Interpreting Design Ambiguity**
+The Figma design presented "Popular" as a sibling to food categories. I identified that this would lead to a flat, confusing list. I improvised a **Grouped View logic** that maintains the menu's structure while highlighting top-rated items.
 
-🎨 Mastering Shadcn UI
-As this was my first time using Shadcn, I faced a steep learning curve in customizing component styles without "breaking" the underlying Radix primitives.
+🎨 **State & URL Synchronization**
+Synchronizing the `activeCategory` state with URL parameters without triggering "cascading renders" required careful implementation of `useState` initialization and `useEffect` hooks to ensure a smooth, error-free user experience during navigation.
 
-- Solution: I utilized Tailwind’s cn() utility and learned to extend Shadcn's base styles via class-variance-authority (CVA), allowing for heavy customization while maintaining the integrity of the library.
-
-📱 Responsive Layouts
-Matching 5 pages across both Mobile and Desktop required deep use of Tailwind’s grid and flexbox systems, specifically handling the "line-height" gaps in images and ensuring uniform card heights in the menu grid regardless of content length.
+📱 **Responsive Layouts**
+Handled complex grid behaviors and image aspect ratios across breakpoints, ensuring that wrapping components in `Link` tags didn't compromise the layout integrity or the intended CSS styling.
 
 ---
 
