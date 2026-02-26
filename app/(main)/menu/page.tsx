@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { CategoryFilter } from "@/components/CategoryFilter";
 import { categories, foodData } from "@/lib/foodData";
 import { FoodItemCard } from "@/components/FoodCard";
 
-export default function Menu() {
+export function MenuContent() {
   const searchParams = useSearchParams();
   const categoryFromUrl = searchParams.get("category");
 
@@ -78,5 +78,13 @@ export default function Menu() {
         )}
       </section>
     </section>
+  );
+}
+
+export default function Menu() {
+  return (
+    <Suspense>
+      <MenuContent />
+    </Suspense>
   );
 }
