@@ -12,7 +12,7 @@ A high-fidelity frontend implementation of the Chuks Kitchen food delivery platf
 
 ## 📋 Project Overview
 
-The core objective was to demonstrate "Design-to-Code" proficiency by implementing a minimum of 5 pages from a 12-page Figma specification. I successfully delivered 5 core pages with full mobile responsiveness, prioritizing pixel-perfection and clean architectural patterns.
+The core objective was to demonstrate "Design-to-Code" proficiency by implementing a Figma specification. I successfully delivered 5 core pages with full mobile responsiveness, prioritizing pixel-perfection and clean architectural patterns.
 
 ### Pages Implemented:
 
