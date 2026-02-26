@@ -8,12 +8,23 @@ import { FoodItemCard } from "@/components/FoodCard";
 export default function Menu() {
   const [activeCategory, setActiveCategory] = useState("Popular");
 
+  // 1. Get the flat list (what you already have)
   const filteredFood = foodData.filter((item) => {
-    if (activeCategory === "Popular") {
-      return item.isPopular === true;
-    }
+    if (activeCategory === "Popular") return item.isPopular;
     return item.category === activeCategory;
   });
+
+  // 2. NEW: If it's "Popular", group those items by their real category
+  // This creates an object like { "Jollof": [item1, item2], "Drinks": [item3] }
+  const groupedItems = filteredFood.reduce(
+    (acc, item) => {
+      const cat = item.category;
+      if (!acc[cat]) acc[cat] = [];
+      acc[cat].push(item);
+      return acc;
+    },
+    {} as Record<string, typeof foodData>,
+  );
 
   return (
     <section>
@@ -33,12 +44,31 @@ export default function Menu() {
       />
 
       <section className="flex-1 px-5 md:px-12 py-6 md:pt-12.5 md:pb-20.5">
-        <h1 className="title-md md:page-subhead mb-1 md:mb-5">{activeCategory}</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-17.5 justify-items-center">
-          {filteredFood.map((food) => (
-            <FoodItemCard food={food} variant="menu" key={food.id} />
-          ))}
-        </div>
+        {activeCategory === "Popular" ? (
+          Object.entries(groupedItems).map(([categoryName, items]) => (
+            <div key={categoryName} className="mb-5">
+              <h2 className="title-md md:page-subhead mb-1 md:mb-5">
+                Popular in {categoryName}
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-17.5 justify-items-center">
+                {items.map((food) => (
+                  <FoodItemCard food={food} variant="menu" key={food.id} />
+                ))}
+              </div>
+            </div>
+          ))
+        ) : (
+          <>
+            <h2 className="title-md md:page-subhead mb-1 md:mb-5">
+              {activeCategory}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-17.5 justify-items-center">
+              {filteredFood.map((food) => (
+                <FoodItemCard food={food} variant="menu" key={food.id} />
+              ))}
+            </div>
+          </>
+        )}
 
         {filteredFood.length === 0 && (
           <p className="text-center py-20 regular">

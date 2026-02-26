@@ -79,6 +79,7 @@ export const foodData: FoodItem[] = [
       "Our signature Jollof rice, cooked to perfection, served with succulent fried chicken.",
     imageUrl: "/food/food-items/jollof-chicken.jpg",
     category: "Jollof Rice & Entrees",
+    isPopular: true,
     isChefSpecial: true,
   },
   {
@@ -118,6 +119,7 @@ export const foodData: FoodItem[] = [
       "Rich and savory Egusi soup with assorted meats, paired with freshly pounded yam.",
     imageUrl: "/food/food-items/egusi-pounded-yam.jpg",
     category: "Swallows & Soups",
+    isPopular: true,
     isChefSpecial: true,
   },
   {
