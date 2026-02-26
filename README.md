@@ -4,6 +4,12 @@ A high-fidelity frontend implementation of the Chuks Kitchen food delivery platf
 
 ---
 
+### Live Priview
+
+[Vercel Deployment](https://chuks-kitchen-gamma.vercel.app)
+
+---
+
 ## 📋 Project Overview
 
 The core objective was to demonstrate "Design-to-Code" proficiency by implementing a minimum of 5 pages from a 12-page Figma specification. I successfully delivered 5 core pages with full mobile responsiveness, prioritizing pixel-perfection and clean architectural patterns.
@@ -20,7 +26,7 @@ The core objective was to demonstrate "Design-to-Code" proficiency by implementi
 
 - Menu/Explore: A complex listing page featuring advanced filtering and search.
 
-Note: Account, Cart, and Contact pages are planned for future development.
+***Note: Account, Cart, and Contact pages are planned for future development.***
 
 ---
 
@@ -138,3 +144,13 @@ pnpm install
 ```bash
 pnpm dev
 ```
+
+---
+
+## Author
+
+***Dhee-codes***
+
+### Acknowledgement
+
+Trueminds Innovations
